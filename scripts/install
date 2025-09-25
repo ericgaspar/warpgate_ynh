@@ -20,9 +20,9 @@ chmod +x $install_dir/warpgate
 #=================================================
 # APP INITIAL CONFIGURATION
 #=================================================
-ynh_script_progression "Adding $app's configuration files..."
+#ynh_script_progression "Adding $app's configuration files..."
 
-ynh_config_add --template="warpgate.yaml" --destination="$install_dir/warpgate.yaml"
+#ynh_config_add --template="warpgate.yaml" --destination="$install_dir/warpgate.yaml"
 
 #=================================================
 # SYSTEM CONFIGURATION
