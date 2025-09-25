@@ -43,7 +43,7 @@ yunohost service add "$app" --description="A short description of the app" --log
 ynh_script_progression "Installing the app..."
 
 pushd "$install_dir"
- 	ynh_hide_warnings ./warpgate unattended-setup --config=$install_dir/warpgate.yaml --database-url="mysql://$db_user:$db_pwd@127.0.0.1:3306/$db_name" --data-path="$data_dir" --http-port=$port --mysql-port="3306" --admin-password=$password #--external-host
+ 	ynh_hide_warnings ./warpgate --config=$install_dir/warpgate.yaml unattended-setup --database-url="mysql://$db_user:$db_pwd@127.0.0.1:3306/$db_name" --data-path="$data_dir" --http-port=$port --mysql-port="3306" --admin-password=$password #--external-host
 popd
 
 #=================================================
