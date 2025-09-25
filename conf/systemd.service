@@ -1,18 +1,17 @@
 [Unit]
-Description=Small description of the service
+Description=Warpgate
 After=network.target
+StartLimitIntervalSec=0
 
 [Service]
 Type=simple
 User=__APP__
 Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
-ExecStart=__INSTALL_DIR__/script
-StandardOutput=append:/var/log/__APP__/__APP__.log
-StandardError=inherit
+ExecStart=__INSTALL_DIR__/warpgate --config /etc/warpgate.yaml run
+Restart=always
+RestartSec=5
 
-### Depending on specificities of your service/app, you may need to tweak these
-### .. but this should be a good baseline
 # Sandboxing options to harden security
 # Details for these options: https://www.freedesktop.org/software/systemd/man/systemd.exec.html
 NoNewPrivileges=yes
